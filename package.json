@@ -1,0 +1,17 @@
+{
+  "name": "demo-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run dev --prefix api",
+    "up": "mkdir -p data && docker-compose up -d",
+    "postup": "npm run dev",
+    "stop": "docker-compose stop",
+    "down": "docker-compose down"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {}
+}
