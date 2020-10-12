@@ -22,4 +22,8 @@ userSchema.methods.matchPassword = function (password) {
   return compare(password, this.password);
 };
 
+userSchema.set("toJSON", {
+  transform: (doc, { password, __v, ...rest }, options) => rest,
+});
+
 export const User = model("User", userSchema);

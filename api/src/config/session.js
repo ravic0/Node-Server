@@ -11,6 +11,8 @@ export const {
 
 const IN_PROD = ENVIRONMENT === "production";
 
+export const SESSION_ABSOLUTE_TIMEOUT = +(ONE_HOUR * 6); // fixing indefinite sessions
+
 export const SESSION_OPTIONS = {
   name: SESSION_NAME,
   cookie: {

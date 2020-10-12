@@ -14,7 +14,7 @@
 ```sh
  curl -v -X POST localhost:3000/login -H 'Content-Type: application/json' -d '{"email":"ravnit.sehgal@gmail.com", "password":"secret00"}'
 
-curl -v -X POST localhost:3000/login -H 'Content-Type: application/json' -d '{"email":"ravnit.sehgal@gmail.com", "password":"secret00"}' --cookie 'sid=s%3AJnvRoTP-qHg_s-oU3d0yO99_9C8EVSbK.K7kgZkvL6CIgIWMZUMNN9N8kx4Ix03kZRgAWSNfzOwE'
+curl -v -X POST localhost:3000/login -H 'Content-Type: application/json' -d '{"email":"ravnit.sehgal@gmail.com", "password":"secret00"}' --cookie 'sid=s%3AFiPRiucXxanRlBMaurTB_v0CA5Iq_nzF.avs56eMeNMBVdUDHuU%2B%2BV0J9NrcXz2TLwvw%2FrbNRW9k'
 
 ```
 
@@ -28,6 +28,8 @@ curl -v -X POST localhost:3000/logout --cookie 'sid=s%3AhKCDaBWMkr_7PlLxw8BWaOKX
 
 ```sh
 docker exec -it demo-server_cache_1 redis-cli  -a secret
+
+docker exec -it demo-server_cache_1 redis-cli  -a secret flushall
 
 docker exec -it demo-server_db_1 mongo -u admin -p secret auth
 ```

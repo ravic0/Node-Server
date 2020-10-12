@@ -1,7 +1,8 @@
 import express from "express";
 import expressSession from "express-session";
 import { SESSION_OPTIONS } from "./config";
-import { login, register } from "./router";
+import { active, asyncErrorHandler } from "./middleware";
+import { home, login, register } from "./router";
 
 export const createApp = (store) => {
   const app = express();
@@ -18,6 +19,10 @@ export const createApp = (store) => {
   app.use(login);
 
   app.use(register);
+
+  app.use(home);
+
+  app.use(asyncErrorHandler(active));
 
   app.get("/", (req, res) => {
     res.json({ message: "Works" });
